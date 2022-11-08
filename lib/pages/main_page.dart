@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_connect_to_api/pages/get.dart';
 import 'package:flutter_application_connect_to_api/pages/post.dart';
 
 // ignore: camel_case_types
@@ -27,7 +28,11 @@ class mainPage extends StatelessWidget {
           Container(
               margin: const EdgeInsets.only(top: 10),
               child: ElevatedButton(
-                  onPressed: () {}, child: const Text("GET Method")))
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) => getPage())));
+                  },
+                  child: const Text("GET Method")))
         ]),
       ),
     );
