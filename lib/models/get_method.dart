@@ -8,11 +8,11 @@ class GetMethod {
   GetMethod({this.id, this.email, this.fullname, this.avatar});
 
   static Future<GetMethod> connectAPI(String id) async {
-    Uri url = Uri.parse("https://reqres.in/api/users/$id");
+    Uri url = Uri.parse("https://reqres.in/api/users/" + id);
 
     var responseResult = await http.get(url);
 
-    var data = json.decode(responseResult.body);
+    var data = (json.decode(responseResult.body))["data"];
 
     return GetMethod(
       id: data["id"].toString(),
